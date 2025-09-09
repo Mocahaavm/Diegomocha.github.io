@@ -1,345 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diego Aleman - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0a0a0a;
-      color: #f0f0f0;
-      overflow-x: hidden;
-    }
-    a { text-decoration: none; }
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #1f1f1f, #0d0d0d);
-      color: #fff;
-      text-align: center;
-      padding: 4rem 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #00d4ff;
-      animation: slideDown 1s ease-out;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #ccc;
-      animation: fadeIn 2s ease-out;
-    }
-    nav {
-      margin-top: 25px;
-    }
-    nav a {
-      color: #00d4ff;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    nav a:hover { color: #ff3c78; }
 
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      color: #00d4ff;
-      animation: fadeIn 2s;
-    }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      animation: fadeIn 3s;
-      color: #ddd;
-    }
 
-    /* Projects Grid */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 20px;
-    }
-    .project {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: fadeIn 2s;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    }
-    .project iframe, .project video, .project img {
-      border-radius: 8px;
-      margin-top: 10px;
-      width: 100%;
-      display: block;
-    }
-    .project a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #00d4ff;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    .project a:hover { color: #ff3c78; }
 
-    /* Contact */
-    #contact a {
-      color: #00d4ff;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    #contact a:hover { color: #ff3c78; }
+<!-- Projects Section -->
+<section id="projects" data-aos="fade-up">
+  <h2>Projects</h2>
+  <div class="projects">
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #ccc;
-    }
-
-    /* Animations */
-    @keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diego Aleman Portfolio</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- AOS Library -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background-color: #1a1a1a;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #1e90ff;
-    }
-
-    nav a {
-      color: #f0f0f0;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #1e90ff;
-    }
-
-    section {
-      padding: 80px 50px;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 50px;
-      color: #1e90ff;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .project {
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(30,144,255,0.5);
-    }
-
-    .project img, .project video {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-
-    .project a {
-      color: #1e90ff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
-    }
-
-    #landing {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 50px;
-    }
-
-    #landing a img {
-      width: 300px;
-      border-radius: 12px;
-      transition: transform 0.3s;
-    }
-
-    #landing a img:hover {
-      transform: scale(1.05);
-      cursor: pointer;
-    }
-
-    #contact a {
-      color: #1e90ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    #contact a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1a1a1a;
-      color: #888;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Diego Aleman</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- Landing / Hero Section with Clickable Images -->
-  <section id="landing">
-    <a href="#projects">
-      <img src="media/project1_thumb.jpg" alt="View Projects">
-    </a>
-    <a href="#contact">
-      <img src="media/contact_thumb.jpg" alt="Contact Me">
-    </a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>
-      Hi, I’m Diego Aleman, a full-time student at Phoenix College studying Graphic Design. I have experience in graphic design, motion graphics, and web design. I am skilled in Blender, After Effects, Photoshop, Illustrator, Animate, and have abilities in sales and project management. I love creating visually stunning content and bringing ideas to life through design.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <div class="projects">
-
-      <!-- Project 1 -->
-      <div class="project" data-aos="zoom-in">
-        <h3>Hijinx Local Company Ad</h3>
-        <p>Short ad created for Hijinx in Phoenix. All assets made by me in Blender and Photoshop.</p>
+    <!-- Project 1 -->
+    <div class="project" data-aos="zoom-in">
+      <h3>Hijinx Local Company Ad</h3>
+      <p>Short ad created for Hijinx in Phoenix. All assets made by me in Blender and Photoshop.</p>
+      <div class="video-container">
         <iframe width="100%" height="250" src="https://www.youtube.com/embed/RimosURR3W0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+    </div>
 
-      <!-- Project 2 -->
-      <div class="project" data-aos="zoom-in">
-        <h3>Hijinx T-Shirt Teaser</h3>
-        <p>Another short teaser ad for the same company.</p>
+    <!-- Project 2 -->
+    <div class="project" data-aos="zoom-in">
+      <h3>Hijinx T-Shirt Teaser</h3>
+      <p>Another short teaser ad for the same company.</p>
+      <div class="video-container">
         <iframe width="100%" height="250" src="https://www.youtube.com/embed/vANvouRHzYU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-
-      <!-- Project 3 -->
-      <div class="project" data-aos="zoom-in">
-        <h3>Payhip After Effects Files</h3>
-        <p>I manage and sell After Effects project files on Payhip.</p>
-        <iframe width="100%" height="250" src="https://www.youtube.com/embed/JqDV5U614U0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://payhip.com/Mochaavm" target="_blank">View & Buy Files</a></p>
-      </div>
-
-      <!-- Add more projects here by copying a .project div -->
-
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>If you’d like to work together, reach me at:</p>
-    <p><a href="mailto:da9484131@gmail.com">da9484131@gmail.com</a></p>
-    <p>Follow me on <a href="https://www.instagram.com/mocha.avm" target="_blank">Instagram</a> and <a href="https://www.youtube.com/@mocha.avm1" target="_blank">YouTube</a></p>
-  </section>
+    <!-- Project 3 -->
+    <div class="project" data-aos="zoom-in">
+      <h3>Payhip After Effects Files</h3>
+      <p>I manage and sell After Effects project files on Payhip.</p>
+      <div class="video-container">
+        <iframe width="100%" height="250" src="https://www.youtube.com/embed/JqDV5U614U0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p><a href="https://payhip.com/Mochaavm" target="_blank">View & Buy Files</a></p>
+    </div>
 
-  <footer>
-    &copy; 2025 Diego Aleman. All rights reserved.
-  </footer>
+    <!-- Additional projects can be added by copying one .project div above -->
 
-  <!-- AOS Library Script -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
+  </div>
+</section>
 
-</body>
-</html>
-
-
-
+<!-- Contact Section -->
+<section id="contact" data-aos="fade-up">
+  <h2>Contact</h2>
+  <p>If you’d like to work together, reach me at:</p>
+  <p><a href="mailto:da9484131@gmail.com">da9484131@gmail.com</a></p>
+  <p>Follow me on <a href="https://www.instagram.com/mocha.avm" target="_blank">Instagram</a> and <a href="https://www.youtube.com/@mocha.avm1" target="_blank">YouTube</a></p>
+</section>
