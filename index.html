@@ -1,61 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Diego Aleman - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Diego Aleman — Portfolio</title>
+
+  <!-- Google Font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+    /* ---------- Base ---------- */
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa7b6;
+      --accent1:#ff6b6b;
+      --accent2:#7c5cff;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius: 14px;
     }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Arial;
+      background: radial-gradient(1200px 500px at 10% 10%, rgba(124,92,255,0.08), transparent),
+                  radial-gradient(1000px 400px at 90% 90%, rgba(255,107,107,0.04), transparent),
+                  var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:60px;
     }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
+
+    /* ---------- Layout ---------- */
+    header{
+      padding:36px 20px;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+      max-width:1100px;
+      margin:0 auto;
     }
-    section {
-      padding: 50px 20px;
-      max-width: 800px;
-      margin: auto;
+    .brand{
+      display:flex;
+      gap:16px;
+      align-items:center;
     }
-    h1, h2 {
-      margin-bottom: 20px;
+    .logo{
+      width:62px;
+      height:62px;
+      border-radius:12px;
+      background: linear-gradient(135deg,var(--accent2),var(--accent1));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:20px;
+      color:white;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
     }
-    .project {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    nav a:hover{ color: #fff }
+
+    /* ---------- Intro ---------- */
+    .hero{
+      max-width:1100px;
+      margin:18px auto;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      padding:28px;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: #fff;
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--radius);
+      padding:28px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
     }
+    .intro-left h1{
+      margin:0 0 8px 0;
+      font-size:32px;
+      letter-spacing:-0.5px;
+    }
+    .intro-left .role{
+      display:inline-block;
+      font-weight:700;
+      font-size:16px;
+      color:var(--accent1);
+      padding:6px 10px;
+      border-radius:8px;
+      background: linear-gradient(90deg, rgba(255,107,107,0.06), rgba(124,92,255,0.03));
+      margin-bottom:14px;
+    }
+    .intro-left p.lead{
+      color:var(--muted);
+      margin-top:12px;
+    }
+
+    /* Animated typing line */
+    .typewrap{
+      margin-top:12px;
+      height:28px;
+      overflow:hidden;
+      position:relative;
+    }
+    .typed{
+      font-weight:600;
+      font-size:18px;
+      color:white;
+      white-space:nowrap;
+      animation: typing 8s steps(40,end) infinite;
+      display:inline-block;
+    }
+    .typed::after{
+      content:'';
+      display:inline-block;
+      width:2px;
+      height:20px;
+      background: linear-gradient(180deg,var(--accent1),var(--accent2));
+      margin-left:6px;
+      animation: blink 1s steps(2,start) infinite;
+      vertical-align:middle;
+    }
+    @keyframes typing{
+      0% { transform: translateX(0) }
+      20% { transform: translateX(0) }
+      30% { transform: translateX(-0%) }
+      55% { transform: translateX(-100%) }
+      100% { transform: translateX(-100%) }
+    }
+    @keyframes blink{ 50% {opacity:0} }
+
+    /* ---------- Right Panel: Quick stats / skills ---------- */
+    .skills{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .skill-pill{
+      background: linear-gradient(90deg, rgba(124,92,255,0.09), rgba(255,107,107,0.04));
+      padding:12px;
+      border-radius:12px;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .skill-pill b{ font-size:14px }
+    .small{ color:var(--muted); font-size:13px }
+
+    /* ---------- Sections ---------- */
+    section{
+      max-width:1100px;
+      margin:34px auto;
+      padding:0 20px;
+    }
+    h2.section-title{
+      margin:0 0 18px 0;
+      font-size:22px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .accent-line{
+      width:8px;height:8px;border-radius:50%;
+      background: linear-gradient(45deg,var(--accent2),var(--accent1));
+      box-shadow: 0 6px 20px rgba(124,92,255,0.12);
+    }
+
+    /* ---------- Projects grid ---------- */
+    .projects{
+      display:grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap:18px;
+    }
+    .project{
+      position:relative;
+      overflow:hidden;
+      border-radius:14px;
+      min-height:220px;
+      transition: transform .32s cubic-bezier(.2,.9,.3,1), box-shadow .32s;
+      transform-origin:center;
+      cursor:default;
+      border: 1px solid rgba(255,255,255,0.03);
+      background: linear-gradient(180deg,var(--glass), var(--glass-2));
+      padding:18px;
+    }
+    .project:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(2,6,23,0.6) }
+
+    .project h3{ margin:0 0 8px 0; font-size:18px }
+    .project p{ color:var(--muted); margin:0 0 12px 0; font-size:14px }
+
+    .project .thumb{
+      width:100%;
+      border-radius:10px;
+      aspect-ratio:16/9;
+      background: linear-gradient(90deg, rgba(124,92,255,0.06), rgba(255,107,107,0.04));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,0.7);
+      font-weight:700;
+      font-size:13px;
+      overflow:hidden;
+    }
+    .project .controls{
+      display:flex;
+      gap:8px;
+      margin-top:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:13px;
+      cursor:pointer;
+      text-decoration:none;
+      border: none;
+      background: linear-gradient(90deg,var(--accent2),var(--accent1));
+      color:white;
+      box-shadow: 0 8px 20px rgba(124,92,255,0.12);
+    }
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+    }
+
+    /* ---------- Floating animated info box ---------- */
+    .floating{
+      margin-top:18px;
+      padding:14px;
+      border-radius:12px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.025);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      transform: translateY(0);
+      animation: floaty 6s ease-in-out infinite;
+    }
+    @keyframes floaty{
+      0%{ transform:translateY(0) }
+      50%{ transform:translateY(-6px) }
+      100%{ transform:translateY(0) }
+    }
+
+    /* ---------- Footer ---------- */
+    footer{
+      max-width:1100px;
+      margin:28px auto 120px;
+      padding:20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* ---------- Modal Lightbox for video ---------- */
+    .modal{
+      position:fixed;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(2,6,23,0.8);
+      z-index:800;
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .22s;
+    }
+    .modal.open{ opacity:1; pointer-events:auto }
+    .modal .modal-inner{
+      width:min(1100px,95%);
+      background:transparent;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .modal .close{
+      position:absolute;
+      right:20px; top:18px;
+      background:rgba(255,255,255,0.06);
+      color:white;
+      border-radius:8px;
+      padding:8px 10px;
+      cursor:pointer;
+      border:none;
+      font-weight:700;
+    }
+
+    /* ---------- Reveal animations ---------- */
+    .reveal{ opacity:0; transform: translateY(8px) scale(.995); transition: all .6s cubic-bezier(.2,.9,.3,1) }
+    .reveal.visible{ opacity:1; transform: none }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:1000px){
+      .hero{ grid-template-columns: 1fr; }
+      .typed{ animation: none }
+    }
+    @media (max-width:520px){
+      header{ padding:18px }
+      .logo{ width:48px; height:48px; font-size:16px }
+    }
+
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <h1> Diego </h1>
-    <p>Welcome to my portfolio</p>
+    <div class="brand">
+      <div class="logo">DA</div>
+      <div>
+        <div style="font-weight:800">Diego Aleman</div>
+        <div style="color:var(--muted);font-size:13px">Graphic Designer • Motion Graphics • Blender</div>
+      </div>
+    </div>
+
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -63,47 +337,45 @@
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m Diego, a full time student at PHX college studying for a degree in Graphic Design.
-    I enjoy working on Photoshope, Illustrator,After effects, and blender. This site showcases some of my work and interests.</p>
-  </section>
+  <!-- Hero / Intro -->
+  <div class="hero">
+    <div class="card intro-left reveal">
+      <div class="role">Full-time Student • Phoenix College</div>
+      <h1>Hi — I’m <span style="background:linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; color:transparent;">Diego Aleman</span></h1>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Project 1</h3>
-        <p> Short ad clothing store(all images made by me in both blender at photo shop) </p>
-        <a href="#">View Project</a>
-         <iframe width="100%" height="250"
-          src="https://www.youtube.com/RimosURR3W0"
-          title="Hijinx ad"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-  </iframe>
-</div>
+      <div class="typewrap" aria-hidden="true">
+        <div class="typed">Graphic Design • Motion Graphics • Website Design • Sales • After Effects • Blender</div>
       </div>
-      <div class="project">
-        <h3>Project 2</h3>
-        <p>Short description of another project.</p>
-        <a href="#">View Project</a>
+
+      <p class="lead">
+        I’m a full-time graphic design student at Phoenix College with a strong background in motion graphics and visual storytelling.
+        I bring polished design work and technical know-how — working across Blender, After Effects, Photoshop, Illustrator, and Animate —
+        while also having practical experience in sales and web design. I enjoy creating striking visuals and short-form ads, and I build assets that are both eye-catching and effective in real-world campaigns.
+      </p>
+
+      <div class="floating" role="note" aria-label="Quick overview">
+        <div>
+          <div style="font-weight:700">Tools</div>
+          <div class="small">Blender · After Effects · Photoshop · Illustrator · Animate</div>
+        </div>
+        <div>
+          <div style="font-weight:700">Skills</div>
+          <div class="small">Motion Design · Ads · 3D · UI Design · Sales</div>
+        </div>
       </div>
-      <!-- Add more project boxes as needed -->
+
+      <div style="display:flex;gap:12px;margin-top:14px">
+        <a class="btn" href="#projects" title="See projects">View Projects</a>
+        <a class="btn ghost" href="https://www.instagram.com/mocha.avm" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>If you’d like to work together, reach me at:</p>
-    <p><a href="mailto:da9484131@gmail.com">d9484131@gmail.com /p>
-  </section>
+    <aside class="card skills reveal" style="align-self:flex-start">
+      <div style="font-weight:800;margin-bottom:8px">Quick Links</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <a class="btn ghost" href="https://www.youtube.com/@mocha.avm1" target="_blank" rel="noopener">YouTube Channel</a>
+        <a class="btn ghost" href="https://payhip.com/Mochaavm" target="_blank" rel="noopener">Payhip — AE Project Files</a>
+        <a class="btn ghost" href="https://www.instagram.com/mocha.avm" target="_blank" rel="noopener">Instagram</a>
+      </div>
 
-  <footer>
-    <p>© Diego Aleman - All Rights Reserved</p>
-  </footer>
-
-</body>
-</html>
-
+      <div style="height:10px
