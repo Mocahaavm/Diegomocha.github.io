@@ -124,21 +124,142 @@
     }
     @keyframes fadeIn {
       from { opacity: 0; }
-      to { opacity: 1; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego Aleman Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- AOS Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
     }
 
-    /* Optional glow effect */
-    .glow {
-      text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
+    header h1 {
+      margin: 0;
+      color: #1e90ff;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #1e90ff;
+    }
+
+    section {
+      padding: 80px 50px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 50px;
+      color: #1e90ff;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(30,144,255,0.5);
+    }
+
+    .project img, .project video {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .project a {
+      color: #1e90ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    #landing {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    #landing a img {
+      width: 300px;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    #landing a img:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    #contact a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1a1a1a;
+      color: #888;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1 class="glow">Diego Aleman</h1>
-    <p>Full-time Graphic Design student at Phoenix College. Experienced in motion graphics, multimedia production, Blender, After Effects, Photoshop, Illustrator, Animate, sales, and website design.</p>
+    <h1>Diego Aleman</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -146,59 +267,79 @@
     </nav>
   </header>
 
-  <section id="about">
-    <h2 class="glow">About Me</h2>
-    <p>Hello! I’m Diego Aleman, a creative Graphic Design student passionate about visual storytelling. I specialize in graphic design, motion graphics, and multimedia projects. I enjoy exploring innovative ways to communicate ideas through design while using my skills in Blender, After Effects, Photoshop, Illustrator, and Animate. I also have experience in sales and website design, making me versatile in both creative and practical aspects of digital projects.</p>
+  <!-- Landing / Hero Section with Clickable Images -->
+  <section id="landing">
+    <a href="#projects">
+      <img src="media/project1_thumb.jpg" alt="View Projects">
+    </a>
+    <a href="#contact">
+      <img src="media/contact_thumb.jpg" alt="Contact Me">
+    </a>
   </section>
 
-  <section id="projects">
-    <h2 class="glow">Projects</h2>
+  <!-- About Section -->
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      Hi, I’m Diego Aleman, a full-time student at Phoenix College studying Graphic Design. I have experience in graphic design, motion graphics, and web design. I am skilled in Blender, After Effects, Photoshop, Illustrator, Animate, and have abilities in sales and project management. I love creating visually stunning content and bringing ideas to life through design.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
     <div class="projects">
 
-      <div class="project">
+      <!-- Project 1 -->
+      <div class="project" data-aos="zoom-in">
         <h3>Hijinx Local Company Ad</h3>
-        <p>Short ad for Hijinx Local Company in Phoenix. All images made by me in Blender and Photoshop.</p>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/RimosURR3W0" title="Hijinx Ad" frameborder="0" allowfullscreen></iframe>
+        <p>Short ad created for Hijinx in Phoenix. All assets made by me in Blender and Photoshop.</p>
+        <iframe width="100%" height="250" src="https://www.youtube.com/embed/RimosURR3W0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
-      <div class="project">
+      <!-- Project 2 -->
+      <div class="project" data-aos="zoom-in">
         <h3>Hijinx T-Shirt Teaser</h3>
-        <p>Another ad teaser for T-shirt designs created for Hijinx Local Company.</p>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/vANvouRHzYU" title="T-Shirt Teaser" frameborder="0" allowfullscreen></iframe>
+        <p>Another short teaser ad for the same company.</p>
+        <iframe width="100%" height="250" src="https://www.youtube.com/embed/vANvouRHzYU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
-      <div class="project">
-        <h3>Payhip After Effects Projects</h3>
-        <p>Personal After Effects project files sold on Payhip, entirely created and managed by me.</p>
-        <a href="https://payhip.com/Mochaavm" target="_blank">View on Payhip</a>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/JqDV5U614U0" title="Payhip Demo" frameborder="0" allowfullscreen></iframe>
+      <!-- Project 3 -->
+      <div class="project" data-aos="zoom-in">
+        <h3>Payhip After Effects Files</h3>
+        <p>I manage and sell After Effects project files on Payhip.</p>
+        <iframe width="100%" height="250" src="https://www.youtube.com/embed/JqDV5U614U0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p><a href="https://payhip.com/Mochaavm" target="_blank">View & Buy Files</a></p>
       </div>
 
-      <div class="project">
-        <h3>Social Media Links</h3>
-        <p>Non-professional work posted on my social platforms:</p>
-        <p>
-          <a href="https://www.instagram.com/mocha.avm" target="_blank">Instagram</a> | 
-          <a href="https://www.youtube.com/@mocha.avm1" target="_blank">YouTube</a>
-        </p>
-      </div>
+      <!-- Add more projects here by copying a .project div -->
 
     </div>
   </section>
 
-  <section id="contact">
-    <h2 class="glow">Contact</h2>
+  <!-- Contact Section -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
     <p>If you’d like to work together, reach me at:</p>
-    <p>
-      <a href="mailto:da9484131@gmail.com">da9484131@gmail.com</a>
-    </p>
+    <p><a href="mailto:da9484131@gmail.com">da9484131@gmail.com</a></p>
+    <p>Follow me on <a href="https://www.instagram.com/mocha.avm" target="_blank">Instagram</a> and <a href="https://www.youtube.com/@mocha.avm1" target="_blank">YouTube</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Diego Aleman
+    &copy; 2025 Diego Aleman. All rights reserved.
   </footer>
+
+  <!-- AOS Library Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 
 </body>
 </html>
+
 
 
