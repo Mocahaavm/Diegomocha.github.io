@@ -3,16 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>[Diego Aleman] - Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    h1 { font-size: 2.5rem; }
-    p { font-size: 1.2rem; color: #555; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
-  <h1>Hello, I’m [Your Name]</h1>
-  <p>Welcome to my portfolio site!</p>
-  <p><a href="mailto:youremail@example.com">Contact Me</a></p>
+
+  <header>
+    <h1>[Diego]</h1>
+    <p>Welcome to my portfolio</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Diego, a full time student at PHX college studying for a degree in Graphic Design.
+    I enjoy working on Photoshope, Illustrator,After effects, and blender. This site showcases some of my work and interests.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Project 1</h3>
+        <p>Short I make both persional and professional work in my spare time to continue to work on my skills and further build my portfolio </p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Project 2</h3>
+        <p>Short description of another project.</p>
+        <a href="#">View Project</a>
+      </div>
+      <!-- Add more project boxes as needed -->
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>If you’d like to work together, reach me at:</p>
+    <p><a href="mailto:da9484131@gmail.com">d9484131@gmail.com/a></p>
+  </section>
+
+  <footer>
+    <p>© Diego Aleman - All Rights Reserved</p>
+  </footer>
+
 </body>
 </html>
