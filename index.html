@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diego Aleman Portfolio</title>
 
+  <!-- AOS animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- AOS animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
   <style>
-    /* Reset & base styling */
+    /* Reset & basic styling */
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
     body { background-color:#111; color:#eee; line-height:1.6; scroll-behavior:smooth; }
     a { color:#fff; text-decoration:none; }
     a:hover { color:#00adee; }
 
-    /* Header */
     header {
       background:#000;
       padding:20px 40px;
@@ -30,13 +29,15 @@
       align-items:center;
       border-bottom:1px solid #222;
     }
+
     header nav a { margin-left:20px; font-weight:700; transition:color 0.3s; }
 
-    /* Sections */
     section { padding:80px 20px; max-width:1000px; margin:0 auto; }
+
     h1,h2,h3 { font-weight:700; }
     h1 { font-size:3em; margin-bottom:10px; }
     h2 { font-size:2em; margin-bottom:20px; border-bottom:2px solid #00adee; display:inline-block; padding-bottom:5px; }
+
     p { margin-bottom:15px; }
 
     /* Hero */
@@ -45,17 +46,9 @@
 
     /* Projects */
     .projects { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-    .project {
-      background:#1a1a1a; padding:20px; border-radius:12px;
-      width:300px; transition:transform 0.3s;
-    }
+    .project { background:#1a1a1a; padding:20px; border-radius:12px; width:300px; transition:transform 0.3s; }
     .project:hover { transform:scale(1.05); }
-    .project img, .project video, .project iframe { width:100%; border-radius:8px; margin-top:10px; cursor:pointer; }
-
-    /* Thumbnails inside projects */
-    .thumbs { display:flex; gap:10px; margin-top:10px; }
-    .thumbs img { width:70px; border-radius:6px; cursor:pointer; transition:transform 0.3s; }
-    .thumbs img:hover { transform:scale(1.1); }
+    .project img, .project video, .project iframe { width:100%; border-radius:8px; margin-top:10px; }
 
     /* Contact */
     #contact a { display:inline-block; margin-top:10px; }
@@ -66,7 +59,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h2>Diego Aleman</h2>
     <nav>
@@ -76,56 +68,38 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="hero" data-aos="fade-up">
-    <img src="https://via.placeholder.com/150" alt="Diego Aleman">
-    <h1>Diego Aleman</h1>
+    <img src="https://yt3.googleusercontent.com/HFjC6oYLQTY3i9-rb7jBONNtPfPxnV3O0QsyO4ZqbmXG_AKeN_3WeMhgk7QsenZbQAyTOhVGow=s160-c-k-c0x00ffffff-no-rj" alt="Diego Aleman">
     <p>Full-time Graphic Design student at Phoenix College. Experienced in graphic design, motion graphics, website design, Blender, After Effects, Photoshop, Illustrator, and Animate. Skilled in sales and creative projects.</p>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
     <div class="projects">
-
-      <!-- Project 1 -->
       <div class="project" data-aos="zoom-in">
         <h3>Hijinx Local Company Ad</h3>
         <p>Short ad created for Hijinx in Phoenix. All assets made by me in Blender and Photoshop.</p>
         <iframe width="100%" height="200" src="https://www.youtube.com/embed/RimosURR3W0" frameborder="0" allowfullscreen></iframe>
-        <div class="thumbs">
-          <img src="https://via.placeholder.com/70" alt="Thumb 1" onclick="window.location.href='https://www.youtube.com/watch?v=RimosURR3W0';">
-          <img src="https://via.placeholder.com/70" alt="Thumb 2" onclick="window.location.href='https://www.youtube.com/watch?v=RimosURR3W0';">
-        </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="project" data-aos="zoom-in">
         <h3>Hijinx T-Shirt Teaser</h3>
         <p>Another short teaser ad for the same company.</p>
         <iframe width="100%" height="200" src="https://www.youtube.com/embed/vANvouRHzYU" frameborder="0" allowfullscreen></iframe>
-        <div class="thumbs">
-          <img src="https://via.placeholder.com/70" alt="Thumb 1" onclick="window.location.href='https://www.youtube.com/watch?v=vANvouRHzYU';">
-          <img src="https://via.placeholder.com/70" alt="Thumb 2" onclick="window.location.href='https://www.youtube.com/watch?v=vANvouRHzYU';">
-        </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="project" data-aos="zoom-in">
         <h3>Payhip After Effects Files</h3>
         <p>I manage and sell After Effects project files on Payhip.</p>
         <iframe width="100%" height="200" src="https://www.youtube.com/embed/JqDV5U614U0" frameborder="0" allowfullscreen></iframe>
-        <div class="thumbs">
-          <img src="https://via.placeholder.com/70" alt="Thumb 1" onclick="window.location.href='https://payhip.com/Mochaavm';">
-          <img src="https://via.placeholder.com/70" alt="Thumb 2" onclick="window.location.href='https://payhip.com/Mochaavm';">
-        </div>
         <p><a href="https://payhip.com/Mochaavm" target="_blank">View & Buy Files</a></p>
       </div>
-
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <p>Reach me at:</p>
@@ -133,12 +107,10 @@
     <p>Follow me on <a href="https://www.instagram.com/mocha.avm" target="_blank">Instagram</a> and <a href="https://www.youtube.com/@mocha.avm1" target="_blank">YouTube</a></p>
   </section>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 Diego Aleman. All rights reserved.
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration:1000, once:true });
