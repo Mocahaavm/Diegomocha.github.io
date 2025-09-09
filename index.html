@@ -6,41 +6,48 @@
   <title>Diego Aleman - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* General Styles */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(120deg, #f6f9fc, #e2e8f0);
-      color: #333;
+      background: #0a0a0a;
+      color: #f0f0f0;
       overflow-x: hidden;
     }
+    a { text-decoration: none; }
+    /* Header */
     header {
-      background: #0d1117;
+      background: linear-gradient(135deg, #1f1f1f, #0d0d0d);
       color: #fff;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
+      position: relative;
+      overflow: hidden;
     }
     header h1 {
       font-size: 3rem;
+      color: #00d4ff;
       animation: slideDown 1s ease-out;
     }
     header p {
       font-size: 1.2rem;
       margin-top: 10px;
+      color: #ccc;
       animation: fadeIn 2s ease-out;
     }
     nav {
-      margin-top: 20px;
+      margin-top: 25px;
     }
     nav a {
-      color: #1e90ff;
+      color: #00d4ff;
       margin: 0 15px;
-      text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: 0.3s;
     }
-    nav a:hover { color: #ff6347; }
+    nav a:hover { color: #ff3c78; }
 
+    /* Sections */
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -49,13 +56,18 @@
     h2 {
       text-align: center;
       margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #00d4ff;
       animation: fadeIn 2s;
     }
     p {
       font-size: 1.1rem;
       line-height: 1.6;
       animation: fadeIn 3s;
+      color: #ddd;
     }
+
+    /* Projects Grid */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -63,41 +75,49 @@
       margin-top: 20px;
     }
     .project {
-      background: #fff;
+      background: #1a1a1a;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
       animation: fadeIn 2s;
     }
-    .project iframe {
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    }
+    .project iframe, .project video, .project img {
       border-radius: 8px;
       margin-top: 10px;
+      width: 100%;
+      display: block;
     }
     .project a {
       display: inline-block;
       margin-top: 10px;
-      color: #1e90ff;
+      color: #00d4ff;
       font-weight: bold;
-      text-decoration: none;
       transition: color 0.3s;
     }
-    .project a:hover { color: #ff6347; }
+    .project a:hover { color: #ff3c78; }
 
+    /* Contact */
     #contact a {
-      color: #1e90ff;
-      text-decoration: none;
+      color: #00d4ff;
       font-weight: bold;
       transition: color 0.3s;
     }
-    #contact a:hover { color: #ff6347; }
+    #contact a:hover { color: #ff3c78; }
 
+    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
-      background: #0d1117;
-      color: #fff;
+      background: #111;
+      color: #ccc;
     }
 
+    /* Animations */
     @keyframes slideDown {
       from { transform: translateY(-50px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
@@ -106,13 +126,19 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
+    /* Optional glow effect */
+    .glow {
+      text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+    }
+
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Diego Aleman</h1>
-    <p>Full-time student at Phoenix College studying Graphic Design. Experienced in graphic design, motion graphics, and multimedia production.</p>
+    <h1 class="glow">Diego Aleman</h1>
+    <p>Full-time Graphic Design student at Phoenix College. Experienced in motion graphics, multimedia production, Blender, After Effects, Photoshop, Illustrator, Animate, sales, and website design.</p>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -121,16 +147,14 @@
   </header>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m Diego Aleman, a dedicated Graphic Design student at Phoenix College with a passion for creativity.  
-       I specialize in graphic design, motion graphics, and multimedia projects. I’m skilled in Blender, After Effects, Photoshop, Illustrator, Animate, as well as sales and website design.  
-       I love bringing ideas to life visually and exploring innovative ways to communicate through design.</p>
+    <h2 class="glow">About Me</h2>
+    <p>Hello! I’m Diego Aleman, a creative Graphic Design student passionate about visual storytelling. I specialize in graphic design, motion graphics, and multimedia projects. I enjoy exploring innovative ways to communicate ideas through design while using my skills in Blender, After Effects, Photoshop, Illustrator, and Animate. I also have experience in sales and website design, making me versatile in both creative and practical aspects of digital projects.</p>
   </section>
 
-  <section id="projects" style="background:#f0f4f8;">
-    <h2>Projects</h2>
+  <section id="projects">
+    <h2 class="glow">Projects</h2>
     <div class="projects">
-      
+
       <div class="project">
         <h3>Hijinx Local Company Ad</h3>
         <p>Short ad for Hijinx Local Company in Phoenix. All images made by me in Blender and Photoshop.</p>
@@ -163,7 +187,7 @@
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2 class="glow">Contact</h2>
     <p>If you’d like to work together, reach me at:</p>
     <p>
       <a href="mailto:da9484131@gmail.com">da9484131@gmail.com</a>
@@ -176,4 +200,5 @@
 
 </body>
 </html>
+
 
